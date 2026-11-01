@@ -8,8 +8,8 @@ This is the main idea I want to remember.
 
 ## Tasks
 
-- Read the paper
-- Check the data
+- [ ] Read the paper
+- [ ] Check the data
 - [ ] Write a summary
 
 ## Useful file

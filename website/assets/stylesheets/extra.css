@@ -1,0 +1,24 @@
+/* Practice editor */
+.practice { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.practice h3 { margin: 0 0 .4rem; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; opacity: .7; }
+.practice textarea {
+  width: 100%; min-height: 26rem; box-sizing: border-box; padding: .8rem;
+  font: .8rem/1.5 var(--md-code-font-family, monospace);
+  color: var(--md-code-fg-color); background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; resize: vertical;
+}
+.practice .preview {
+  min-height: 26rem; box-sizing: border-box; padding: .2rem 1rem; overflow: auto;
+  border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem;
+}
+.practice-toolbar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.practice-toolbar button, .practice-toolbar select {
+  font: inherit; padding: .3rem .8rem; cursor: pointer;
+  color: var(--md-default-fg-color); background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--light); border-radius: .2rem;
+}
+.practice-toolbar button:hover { border-color: var(--md-accent-fg-color); }
+.practice .preview table { display: table; }
+.practice .preview pre { background: var(--md-code-bg-color); padding: .6rem; overflow: auto; }
+.practice .preview blockquote { margin-left: 0; padding-left: 1rem; border-left: .2rem solid var(--md-default-fg-color--lighter); }
+@media (max-width: 60em) { .practice { grid-template-columns: 1fr; } }
