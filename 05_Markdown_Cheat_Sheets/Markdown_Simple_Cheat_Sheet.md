@@ -389,7 +389,7 @@ Basic syntax is very portable, but math, citations, footnotes, and some other fe
 | Image | `![description](image.png)` |
 | Inline code | `` `code` `` |
 | Code block | three backticks before and after |
-| Small table | `| A | B |` plus separator row |
+| Small table | cells separated by vertical bars, plus a separator row |
 | Inline math | `$...$` |
 | Display math | `$$...$$` |
 

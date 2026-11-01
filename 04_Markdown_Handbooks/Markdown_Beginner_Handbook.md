@@ -723,7 +723,7 @@ This is a common reason Markdown tables suddenly gain an extra column.
 
 # 19. Math in Markdown
 
-Math support is **renderer-dependent**. Pandoc, Quarto, Jupyter, and many note systems support LaTeX-style math through MathJax/KaTeX or a TeX engine.
+Math support is **renderer-dependent**. GitHub, the built-in VS Code preview, Pandoc, Quarto, Jupyter, and many note systems support LaTeX-style math through MathJax/KaTeX or a TeX engine. Some simpler viewers show the dollar signs literally.
 
 ## Inline math
 
@@ -916,7 +916,7 @@ Many renderers automatically generate anchors for headings.
 For a heading:
 
 ```markdown
-## Data Construction
+## Tables
 ```
 
 you may be able to link with:
@@ -925,9 +925,7 @@ you may be able to link with:
 [Jump to tables](#tables)
 ```
 
-Rendered:
-
-[Jump to tables](#tables)
+Rendered: a clickable link that scrolls to the "Tables" heading of the same file.
 
 Anchor-generation rules can vary, especially for punctuation and duplicate headings.
 
@@ -1396,15 +1394,16 @@ This:
 $E[Y_i \mid X_i]$
 ```
 
-works in many academic renderers, but not in every basic Markdown preview.
+works in many renderers, but not in every basic Markdown preview.
 
 If math matters, use a known math-capable environment such as:
 
+- GitHub (README and `.md` files);
+- the built-in VS Code Markdown preview;
 - Quarto;
 - Jupyter;
 - Pandoc with math support;
-- Obsidian;
-- VS Code extensions that support math.
+- Obsidian.
 
 ---
 
@@ -1860,7 +1859,7 @@ This is a good example of Markdown handling **structure and planning** while mat
 | `[text](url)` | link |
 | `![alt](img.png)` | image |
 | `---` | horizontal rule |
-| `| a | b |` | table row |
+| cells separated by vertical bars | table row |
 | `$x^2$` | inline math in math-enabled renderer |
 | `[^1]` | footnote in supporting renderer |
 | `<!-- ... -->` | hidden comment |
@@ -1950,8 +1949,8 @@ $$
 | insert an image | `![alt](path)` |
 | quote text | `> text` |
 | insert a code block | triple backticks |
-| syntax-highlight R code | opening fence `````r`` |
-| make a simple table | pipes `|` |
+| syntax-highlight R code | three backticks followed by `r` |
+| make a simple table | vertical bars between cells, plus a separator row |
 | write inline math | `$...$` in supported renderers |
 | write display math | `$$...$$` in supported renderers |
 | hide a drafting comment | `<!-- comment -->` |
@@ -1970,7 +1969,7 @@ $$
 | heading not rendered | no space after `#` | write `## Results` |
 | list does not render | formatting/blank-line issue | add blank line before list |
 | image missing | wrong relative path | locate `.md` vs. image |
-| table has extra column | literal `|` inside cell | escape or rewrite it |
+| table has extra column | a literal vertical bar inside a cell | escape it with a backslash or rewrite it |
 | math prints literally | renderer lacks math support | check Markdown flavor |
 | citation prints `[@key]` | renderer lacks Pandoc citation support | use Quarto/Pandoc |
 | footnote prints literally | renderer lacks footnote extension | check flavor |

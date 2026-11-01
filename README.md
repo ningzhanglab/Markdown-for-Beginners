@@ -4,6 +4,8 @@
 
 No Git or programming experience is required. Most Markdown files work in a text editor without a compiler.
 
+**Prefer your browser?** Read everything, and practice with a live editor, at **<https://ningzhanglab.github.io/Markdown-for-Beginners/>**. Nothing to install.
+
 ## Start in five minutes
 
 1. Open [Markdown_First_Note.md](00_Start_Here/Markdown_First_Note.md), then click the **Raw** or edit view to see its plain-text syntax.
@@ -54,9 +56,10 @@ VS Code supports Markdown previews without an extra extension. See the [editor g
 
 - **`.md`** — editable source, rendered on GitHub.
 - **`.pdf`** — printable reading reference.
-- **`.qmd`** — Quarto source (related to, but not the same as, plain Markdown).
 
 Download the repository through **Code → Download ZIP** if you do not use Git.
+
+The website under [`website/`](website/) is built automatically from these same files; see [website/README.md](website/README.md).
 
 ## Companion collection
 

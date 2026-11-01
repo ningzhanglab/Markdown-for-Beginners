@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+website/_docs/
+website/_site/
+__pycache__/
