@@ -71,6 +71,10 @@ The website under [`website/`](website/) is built automatically from these same 
 
 For research papers, equations, typeset homework, and academic presentations, see [LaTeX for Beginners](https://github.com/ningzhanglab/LaTeX-for-Beginners).
 
+## License
+
+Copyright (c) 2026 Ning Zhang. Everything in this repository is licensed under the [MIT License](LICENSE). You may use, copy, modify, and share it for any purpose, including commercially, as long as you keep the copyright notice and license text with the files. What you write using the templates belongs to you.
+
 ## Source and maintenance
 
 Separated from the original combined [Writing Toolkit](https://github.com/ningzhanglab/For-beginner-Latex-Markdown-and-more), preserving its lesson files and PDF reading copies. Folders are numbered 00 to 03 in reading order. The PDFs are built from the `.md` files with the settings in [`build/`](build/); see [build/README.md](build/README.md).
