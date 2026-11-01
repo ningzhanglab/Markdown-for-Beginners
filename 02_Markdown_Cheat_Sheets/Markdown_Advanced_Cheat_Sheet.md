@@ -1,16 +1,3 @@
----
-title: "Markdown - Advanced Cheat Sheet"
-subtitle: "Extra syntax and research workflows to learn after the basics"
-author: "Writing Toolkit"
-date: "2026"
-geometry: margin=0.78in
-fontsize: 10pt
-colorlinks: true
-header-includes:
-  - |
-    \usepackage{amsmath,amssymb}
----
-
 # Before you start
 
 This sheet is **not the place to begin**.
@@ -668,5 +655,5 @@ Markdown is strongest when you think about **structure**, not exact page layout.
 # Which file should you read next?
 
 - If this sheet already feels like too much, return to **Markdown_Simple_Cheat_Sheet.pdf**.
-- If you want a slower tutorial, read **../04_Markdown_Handbooks/Markdown_Beginner_Handbook.pdf**.
-- If you need editor instructions, read **../04_Markdown_Handbooks/Markdown_Setup_and_Editors_Guide.pdf**.
+- If you want a slower tutorial, read **../01_Markdown_Handbooks/Markdown_Beginner_Handbook.pdf**.
+- If you need editor instructions, read **../01_Markdown_Handbooks/Markdown_Setup_and_Editors_Guide.pdf**.

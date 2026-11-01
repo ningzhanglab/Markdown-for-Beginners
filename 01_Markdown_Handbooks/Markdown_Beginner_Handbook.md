@@ -1,26 +1,3 @@
----
-title: "Markdown Beginner Handbook"
-subtitle: "A Beginner Guide for Research Notes, READMEs, Math, Tables, Code, and Academic Workflows"
-author: "Quick Reference + Worked Examples"
-date: "2026"
-geometry: margin=0.85in
-fontsize: 10pt
-colorlinks: true
-linkcolor: blue
-urlcolor: blue
-toc: true
-toc-depth: 2
-numbersections: false
-header-includes:
-  - |
-    \usepackage{booktabs}
-    \usepackage{longtable}
-    \usepackage{array}
-    \usepackage{amsmath,amssymb}
-    \usepackage{fvextra}
-    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
----
-
 # Before You Start: What Markdown Is
 
 Markdown is a **plain-text writing format**. You type ordinary text plus a small amount of punctuation, and a Markdown renderer turns it into formatted output such as HTML, a preview pane, or a PDF.
@@ -38,11 +15,63 @@ For students and researchers, Markdown is especially useful for:
 - Jupyter / VS Code / Obsidian notes;
 - Quarto or Pandoc documents that combine prose, math, citations, and code.
 
-Markdown is **not a replacement for LaTeX in every situation**. For a journal-style paper with complicated tables, theorem environments, or strict submission formatting, LaTeX is often better. Markdown is usually faster for notes, documentation, drafts, and reproducible workflows.
+Markdown is **not a replacement for LaTeX in every situation**. (LaTeX is a separate typesetting system, widely used for academic papers; you do not need it to use this handbook.) For a journal-style paper with complicated tables, theorem environments, or strict submission formatting, LaTeX is often better. Markdown is usually faster for notes, documentation, drafts, and reproducible workflows.
 
 > **Beginner mental model:** Markdown is normal text first. Formatting is added with a few visible punctuation marks.
 
-> **Want a fast lookup instead of a full lesson?** Start with `../05_Markdown_Cheat_Sheets/Markdown_Simple_Cheat_Sheet.pdf`. It covers the everyday basics in one short file. Use `../05_Markdown_Cheat_Sheets/Markdown_Advanced_Cheat_Sheet.pdf` only when you need more detailed syntax, paths, tables, math, citations, GitHub patterns, or research-note templates.
+> **Want a fast lookup instead of a full lesson?** Start with `../02_Markdown_Cheat_Sheets/Markdown_Simple_Cheat_Sheet.pdf`. It covers the everyday basics in one short file. Use `../02_Markdown_Cheat_Sheets/Markdown_Advanced_Cheat_Sheet.pdf` only when you need more detailed syntax, paths, tables, math, citations, GitHub patterns, or research-note templates.
+
+---
+
+# How to Use This Handbook
+
+You do not need to read all 74 sections. Read the **core path** below in order, then come back to the **reference sections** when you need them. Unfamiliar word? See the glossary in `00_Start_Here/Markdown_Glossary.md`.
+
+## Core path
+
+| Section | What you learn |
+|---|---|
+| 1 | Why the same file can look different in different tools |
+| 2 | Where to write Markdown, and how to preview it |
+| 3 | Your first Markdown file |
+| 4, 5, 6 | Headings, paragraphs, bold and italic |
+| 8, 9 | Inline code and code blocks |
+| 10, 12 | Lists and checkboxes |
+| 13, 14 | Links and images |
+| 17 | Simple tables |
+| 69, 70 | What to learn first, and a four-week workflow |
+
+## Reference sections
+
+| Topic | Sections |
+|---|---|
+| More syntax | 7, 11, 15, 16, 18, 21, 22, 26, 27, 28, 29, 36, 37 |
+| Math and academic writing | 19, 20, 23, 24, 25 |
+| Templates and examples | 30, 31, 32, 33, 34, 35, 60, 61, 62, 63, 64, 71, 72, 73 |
+| Things that go wrong | 38 to 49, and 68 |
+| Markdown with other tools | 52 to 59 |
+| Quick lookups | 65, 66, 67 |
+| Good habits | 50, 51, 74 |
+
+## Markdown is not only for research
+
+Most examples here come from research notes, but the same ideas work for any plain notes. For example:
+
+```markdown
+# Weekend Trip
+
+## Packing list
+
+- [x] Passport
+- [ ] Phone charger
+
+## Plan
+
+1. Saturday: hike
+2. Sunday: **brunch** at [Cafe Luna](https://example.com)
+```
+
+The templates folder also has ready-made class notes, a weekly plan, and meeting notes.
 
 ---
 
@@ -150,7 +179,7 @@ Browser tools are convenient, but research data and notes can be sensitive. Do n
 For a longer step-by-step guide, see:
 
 ```text
-04_Markdown_Handbooks/Markdown_Setup_and_Editors_Guide.md
+01_Markdown_Handbooks/Markdown_Setup_and_Editors_Guide.md
 ```
 
 ---
@@ -187,7 +216,7 @@ Today I cleaned the county-level employment data.
 
 Estimate the baseline specification.
 
-You do **not** need a document class, package declarations, or `\begin{document}` as you do in LaTeX.
+You do **not** need any setup lines at the top. (Other systems, such as LaTeX, require a document class, package declarations, and `\begin{document}` before you can type a single sentence.)
 
 ---
 
@@ -195,7 +224,7 @@ You do **not** need a document class, package declarations, or `\begin{document}
 
 Use `#` characters at the beginning of a line.
 
-## Source
+**Source**
 
 ```markdown
 # Level 1 heading
@@ -204,7 +233,7 @@ Use `#` characters at the beginning of a line.
 #### Level 4 heading
 ```
 
-## Rendered idea
+**Rendered idea**
 
 # Level 1 heading
 ## Level 2 heading
@@ -243,7 +272,7 @@ not:
 
 Markdown uses **blank lines** to separate paragraphs.
 
-## Source
+**Source**
 
 ```markdown
 This is the first paragraph.
@@ -251,7 +280,7 @@ This is the first paragraph.
 This is the second paragraph.
 ```
 
-## Rendered
+**Rendered**
 
 This is the first paragraph.
 
@@ -286,7 +315,7 @@ Line two.
 
 # 6. Bold, Italic, and Strikethrough
 
-## Source
+**Source**
 
 ```markdown
 **bold text**
@@ -295,7 +324,7 @@ Line two.
 ~~deleted or obsolete text~~
 ```
 
-## Rendered
+**Rendered**
 
 **bold text**  
 *italic text*  
@@ -352,7 +381,7 @@ For filenames, variable names, commands, and literal punctuation, **inline code*
 
 Use single backticks to show code or literal text.
 
-## Source
+**Source**
 
 ```markdown
 Run `reg y x, robust` after cleaning the sample.
@@ -360,13 +389,11 @@ The main file is `analysis.R`.
 The variable is `county_id`.
 ```
 
-## Rendered
+**Rendered**
 
 Run `reg y x, robust` after cleaning the sample.  
 The main file is `analysis.R`.  
 The variable is `county_id`.
-
-This is the Markdown equivalent of the “show the command literally” idea you used in the LaTeX guide.
 
 It is excellent for:
 
@@ -384,7 +411,7 @@ It is excellent for:
 
 Use triple backticks for a block of code.
 
-## Source
+**Source**
 
 ````markdown
 ```r
@@ -393,7 +420,7 @@ summary(model)
 ```
 ````
 
-## Rendered
+**Rendered**
 
 ```r
 model <- lm(y ~ x1 + x2, data = df)
@@ -620,13 +647,13 @@ If the Markdown file is in `notes/` but the figure is in the project-level `figu
 
 Use `>`.
 
-## Source
+**Source**
 
 ```markdown
 > The identifying assumption is most credible when treatment timing is unrelated to short-run local shocks.
 ```
 
-## Rendered
+**Rendered**
 
 > The identifying assumption is most credible when treatment timing is unrelated to short-run local shocks.
 
@@ -667,7 +694,7 @@ Useful for separating sections in notes or READMEs, but do not overuse them if h
 
 Markdown tables are ideal for **small, simple tables**.
 
-## Source
+**Source**
 
 ```markdown
 | Variable | Mean | SD |
@@ -677,7 +704,7 @@ Markdown tables are ideal for **small, simple tables**.
 | Age | 41.7 | 11.8 |
 ```
 
-## Rendered
+**Rendered**
 
 | Variable | Mean | SD |
 |---|---:|---:|
@@ -723,7 +750,7 @@ This is a common reason Markdown tables suddenly gain an extra column.
 
 # 19. Math in Markdown
 
-Math support is **renderer-dependent**. GitHub, the built-in VS Code preview, Pandoc, Quarto, Jupyter, and many note systems support LaTeX-style math through MathJax/KaTeX or a TeX engine. Some simpler viewers show the dollar signs literally.
+Math support is **renderer-dependent**. The notation itself comes from LaTeX, a typesetting system used in many papers; you do not need to know LaTeX, you can copy the examples below and change the letters. GitHub, the built-in VS Code preview, Pandoc, Quarto, Jupyter, and many note systems support LaTeX-style math through MathJax/KaTeX or a TeX engine. Some simpler viewers show the dollar signs literally.
 
 ## Inline math
 
@@ -749,9 +776,9 @@ $$
 y_i = x_i'\beta + \varepsilon_i.
 $$
 
-### Useful fact for your LaTeX knowledge
+### Useful fact: LaTeX math commands work inside math
 
-Inside a math-capable Markdown renderer, familiar LaTeX math commands often work:
+Inside a math-capable Markdown renderer, LaTeX math commands often work:
 
 ```markdown
 $$
@@ -794,7 +821,7 @@ Think of it as:
 
 Footnote syntax is not part of the smallest Markdown core, but Pandoc, GitHub, and many academic tools support it.
 
-## Source
+**Source**
 
 ```markdown
 The sample excludes observations with missing wages.[^1]
@@ -802,7 +829,7 @@ The sample excludes observations with missing wages.[^1]
 [^1]: Results are similar when these observations are retained and missing wages are coded separately.
 ```
 
-## Rendered idea
+**Rendered idea**
 
 The sample excludes observations with missing wages.[^1]
 
@@ -1975,7 +2002,7 @@ $$
 | footnote prints literally | renderer lacks footnote extension | check flavor |
 | paragraph refuses to break | single newline is not paragraph break | add blank line |
 | URL clutters prose | pasted raw URL | use `[name](url)` |
-| underscores trigger formatting | text is not code/escaped | use backticks for variable names |
+| names or symbols turn italic or bold | `_` or `*` read as formatting | put names in backticks |
 
 ---
 

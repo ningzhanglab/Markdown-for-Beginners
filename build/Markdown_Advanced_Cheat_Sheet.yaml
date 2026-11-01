@@ -1,0 +1,13 @@
+# PDF build settings for Markdown_Advanced_Cheat_Sheet.md
+# Used by build/build_pdfs.sh (pandoc --metadata-file). Kept out of the .md file so
+# GitHub shows a clean page.
+title: "Markdown - Advanced Cheat Sheet"
+subtitle: "Extra syntax and research workflows to learn after the basics"
+author: "Markdown for Beginners"
+date: "2026"
+geometry: margin=0.78in
+fontsize: 10pt
+colorlinks: true
+header-includes:
+  - |
+    \usepackage{amsmath,amssymb}

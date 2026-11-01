@@ -5,7 +5,8 @@ this repository. **Edit those originals**, not anything in `website/_docs/`.
 
 | Path | What it is |
 |---|---|
-| `prepare.py` | Copies the originals into `_docs/` (hiding the PDF build settings at the top of each file) and generates the templates page and the practice editor's examples |
+| `prepare.py` | Copies the originals into `_docs/`, makes the `<details>` solution blocks work, links file names such as `Markdown_Glossary.md` to their pages, and generates the templates page and the practice editor's examples |
+| `check_links.py` | Weekly check of external links |
 | `mkdocs.yml` | Site settings and navigation |
 | `pages/` | The two pages written only for the website: the home page and the practice-editor page |
 | `assets/` | The practice editor script and a little CSS |
@@ -29,9 +30,12 @@ One-time setup: **Settings → Pages → Source: GitHub Actions**.
 
 ## PDFs
 
-The PDFs are copied as they are. After changing a `.md` file that has a PDF, rebuild it:
+The PDFs are copied into the site as they are. Rebuild them with `bash build/build_pdfs.sh`; see [build/README.md](../build/README.md).
+
+## Checking links
 
 ```bash
-pandoc 05_Markdown_Cheat_Sheets/Markdown_Simple_Cheat_Sheet.md \
-  -o 05_Markdown_Cheat_Sheets/Markdown_Simple_Cheat_Sheet.pdf --pdf-engine=xelatex
+python website/check_links.py
 ```
+
+Checks the external links written in the Markdown files and lists any that are broken. Links inside code examples are skipped. A weekly workflow (`.github/workflows/links.yml`) runs the same check. Site-internal links are checked on every build, because a broken one stops the build.

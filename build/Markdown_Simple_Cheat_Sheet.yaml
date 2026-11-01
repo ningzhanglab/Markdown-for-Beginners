@@ -1,0 +1,10 @@
+# PDF build settings for Markdown_Simple_Cheat_Sheet.md
+# Used by build/build_pdfs.sh (pandoc --metadata-file). Kept out of the .md file so
+# GitHub shows a clean page.
+title: "Markdown - Simple Cheat Sheet"
+subtitle: "The basic syntax you need on your first day"
+author: "Markdown for Beginners"
+date: "2026"
+geometry: margin=0.85in
+fontsize: 11pt
+colorlinks: true

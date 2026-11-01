@@ -1,13 +1,3 @@
----
-title: "Markdown - Simple Cheat Sheet"
-subtitle: "The basic syntax you need on your first day"
-author: "Writing Toolkit"
-date: "2026"
-geometry: margin=0.85in
-fontsize: 11pt
-colorlinks: true
----
-
 # Start here
 
 Markdown is **normal text with a few simple symbols for formatting**.
@@ -305,7 +295,7 @@ For complicated publication tables, use LaTeX, Quarto, or generated output inste
 
 # 11. Simple math - optional
 
-Some Markdown tools support LaTeX-style math.
+Some Markdown tools support LaTeX-style math (the notation many papers use for equations; you can just copy the examples).
 
 ## Inline math
 
@@ -372,6 +362,8 @@ instead of an absolute path from your desktop.
 
 Basic syntax is very portable, but math, citations, footnotes, and some other features vary by tool.
 
+For more fixes with examples, see `Markdown_Troubleshooting.pdf`.
+
 ---
 
 # Quick lookup
@@ -421,6 +413,23 @@ The main result is ...
 - [ ] Read the data section
 - [ ] Check Table 2
 - [ ] Write a one-paragraph summary
+```
+
+Markdown is just as useful outside research. For example, a plan for the week:
+
+```markdown
+# Plan for This Week
+
+**Goal:** Finish the report.
+
+## Monday
+
+- [x] Outline the report
+- [ ] Email the team
+
+## Tuesday
+
+- [ ] Write the first draft
 ```
 
 That is already a useful Markdown document. Learn the advanced sheet only when you actually need more.

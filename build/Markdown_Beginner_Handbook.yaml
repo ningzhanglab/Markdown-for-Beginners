@@ -1,0 +1,23 @@
+# PDF build settings for Markdown_Beginner_Handbook.md
+# Used by build/build_pdfs.sh (pandoc --metadata-file). Kept out of the .md file so
+# GitHub shows a clean page.
+title: "Markdown Beginner Handbook"
+subtitle: "A Beginner Guide for Research Notes, READMEs, Math, Tables, Code, and Academic Workflows"
+author: "Markdown for Beginners"
+date: "2026"
+geometry: margin=0.85in
+fontsize: 10pt
+colorlinks: true
+linkcolor: blue
+urlcolor: blue
+toc: true
+toc-depth: 2
+numbersections: false
+header-includes:
+  - |
+    \usepackage{booktabs}
+    \usepackage{longtable}
+    \usepackage{array}
+    \usepackage{amsmath,amssymb}
+    \usepackage{fvextra}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}

@@ -40,6 +40,9 @@ nav:
   - Start here:
       - Your first note: start-here/first-note.md
       - Practice editor: start-here/practice.md
+      - Practice exercises: start-here/exercises.md
+      - Why doesn't mine look right?: start-here/troubleshooting.md
+      - Glossary: start-here/glossary.md
   - Cheat sheets:
       - Simple (start here): cheat-sheets/simple.md
       - Advanced: cheat-sheets/advanced.md

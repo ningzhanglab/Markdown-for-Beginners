@@ -12,6 +12,27 @@ Type Markdown on the left. The rendered result appears on the right as you type.
   <button type="button" id="copy">Copy my Markdown</button>
 </div>
 
+<details class="cheat" markdown="1">
+<summary>Syntax reminder</summary>
+
+| You type | You get |
+|---|---|
+| `# Title` | A big heading |
+| `## Section` | A smaller heading |
+| `**bold**` | **bold** |
+| `*italic*` | *italic* |
+| `- item` | A bullet |
+| `1. item` | A numbered item |
+| `- [ ] task` | A checkbox |
+| `[text](https://example.com)` | A link |
+| `` `code` `` | Code style |
+| `> quote` | A quotation |
+| `$x^2$` | Math (if your tool supports it) |
+
+More in the [Simple Cheat Sheet](../cheat-sheets/simple.md).
+
+</details>
+
 <div class="practice" id="practice">
   <div>
     <h3>Type here</h3>
@@ -22,6 +43,8 @@ Type Markdown on the left. The rendered result appears on the right as you type.
     <div id="preview" class="preview" aria-live="polite"></div>
   </div>
 </div>
+
+Ready for more? Try the [practice exercises](exercises.md).
 
 !!! tip "Things to try"
     - Change `#` to `##` and watch the heading get smaller.
