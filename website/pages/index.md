@@ -15,8 +15,9 @@ No Git, account, or programming experience is required. You can start right here
 1. Open the [practice editor](start-here/practice.md). Type on the left; the result appears on the right.
 2. Change the heading, add a bullet point, and make a word **bold**.
 3. Keep the [Simple Cheat Sheet](cheat-sheets/simple.md) open beside you.
-4. When you want the full story, read the [Beginner Handbook](handbooks/beginner-handbook.md).
-5. Copy a [template](templates.md) and make it your own.
+4. Try the [practice exercises](start-here/exercises.md). If something looks wrong, see [Why doesn't mine look right?](start-here/troubleshooting.md)
+5. When you want the full story, read the [Beginner Handbook](handbooks/beginner-handbook.md). It starts with a short guide to which sections to read first.
+6. Copy a [template](templates.md) and make it your own.
 
 !!! tip "Want to keep your notes?"
     Markdown files are plain text ending in `.md`. Create `notes.md` in any text editor (VS Code is a good choice), paste in what you wrote, and you have a real Markdown file. The [setup guide](handbooks/setup-and-editors.md) shows how to preview it.
@@ -33,6 +34,14 @@ No Git, account, or programming experience is required. You can start right here
 
     Type Markdown and watch it render. Nothing to install.
 
+- **[Practice exercises](start-here/exercises.md)**
+
+    Ten short tasks, each with a solution you can reveal.
+
+- **[Why doesn't mine look right?](start-here/troubleshooting.md)**
+
+    The most common slips, with the fix beside each one.
+
 - **[Cheat sheets](cheat-sheets/simple.md)**
 
     Simple sheet for day one; advanced sheet when you need more.
@@ -43,9 +52,11 @@ No Git, account, or programming experience is required. You can start right here
 
 - **[Templates](templates.md)**
 
-    Minimal note, research notes, and project README to copy.
+    Notes, research log, README, class notes, weekly plan, and meeting notes to copy.
 
 </div>
+
+Unfamiliar word? Try the [glossary](start-here/glossary.md).
 
 ## Which editor?
 

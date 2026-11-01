@@ -2,7 +2,7 @@
 
 A beginner-friendly setup guide for students and researchers
 
-Markdown is much easier to start than LaTeX because **you usually do not need a compiler or special installation**. A Markdown file is simply a plain-text file ending in `.md`.
+Markdown is easy to start because **you usually do not need special installation or a compiler** (a program that turns source files into a finished document). A Markdown file is simply a plain-text file ending in `.md`.
 
 If you can create a file called `notes.md`, type text into it, and open a preview, you can use Markdown.
 
@@ -17,6 +17,8 @@ If you can create a file called `notes.md`, type text into it, and open a previe
 | "I want a Google-Docs-like collaborative Markdown editor." | **HackMD** | No | Shared notes, meetings, collaborative drafts |
 | "I want a browser editor with a live preview." | **StackEdit** | No | Quick Markdown writing and previewing |
 | "My notes live next to code and data analysis." | **Jupyter / Colab / Quarto** | Depends | Computational research notebooks and reproducible documents |
+| "I want a personal library of linked notes." | **Obsidian** | Yes | One note per paper or idea, linked together |
+| "I want formatted text as I type, with no preview pane." | **Typora / MarkText** | Yes | Writing that looks finished while you type |
 
 **Beginner recommendation:**
 
@@ -40,7 +42,7 @@ Download VS Code from:
 
 <https://code.visualstudio.com/>
 
-If you already installed VS Code for LaTeX, you are ready.
+If you already have VS Code, you are ready.
 
 ## Step 2 - Create a Markdown file
 
@@ -130,7 +132,7 @@ A simple workflow is:
 4. save;
 5. check the preview.
 
-Unlike LaTeX, basic Markdown does **not** require a compile cycle.
+Basic Markdown does **not** need a compile step: the preview simply updates as you edit.
 
 ## Step 5 - Add an image
 
@@ -388,13 +390,39 @@ You can edit Quarto in VS Code or RStudio. It is a good next step after ordinary
 
 ---
 
-# 7. Which tool should a non-technical beginner choose?
+# 7. Obsidian and live-preview editors
+
+These are good once you know the basic syntax. They are not required.
+
+## Obsidian
+
+Obsidian is a note-taking app that stores every note as an ordinary `.md` file inside a folder called a **vault**. It adds features such as `[[wiki links]]` between notes and a Live Preview mode where formatting appears as you type.
+
+It is a good fit for a personal library of linked notes, for example one note per paper or per idea.
+
+**Portability warning:** `[[wiki links]]`, callouts, and embeds are Obsidian features. GitHub and most other tools do not understand them. If you plan to publish a note, use ordinary links such as `[text](other_note.md)` instead.
+
+Download: <https://obsidian.md/>
+
+## Typora and MarkText
+
+Typora and MarkText are editors that show formatted text as you type, so there is no separate preview pane. The file on disk is still plain Markdown.
+
+Check each tool's website for its current price and availability before installing.
+
+## Advice for beginners
+
+Learn the syntax first in a simple editor such as VS Code or the [practice editor on the website](https://ningzhanglab.github.io/Markdown-for-Beginners/start-here/practice/). Because the file is plain text, you can move to any of these editors later without converting anything.
+
+---
+
+# 8. Which tool should a non-technical beginner choose?
 
 ## Use VS Code if ...
 
-- you already use it for LaTeX;
+- you already use it for other writing or coding;
 - you want your notes stored as local files;
-- you want one folder containing code, Markdown, figures, and LaTeX;
+- you want one folder containing code, Markdown, figures, and other project files;
 - you plan to use GitHub later.
 
 ## Use GitHub's web editor if ...
@@ -425,9 +453,20 @@ You can edit Quarto in VS Code or RStudio. It is a good next step after ordinary
 - you want reproducible academic documents from Markdown-like source;
 - you need citations, cross-references, code execution, and multiple output formats.
 
+## Use Obsidian if ...
+
+- you want a personal library of notes that link to each other;
+- you are happy keeping the notes on your own computer;
+- you will not need to publish them on GitHub exactly as written.
+
+## Use Typora or MarkText if ...
+
+- you find a separate preview pane distracting;
+- you want the page to look finished while you type.
+
 ---
 
-# 8. Important: Markdown looks slightly different across tools
+# 9. Important: Markdown looks slightly different across tools
 
 Do not assume every feature works everywhere.
 
@@ -464,7 +503,7 @@ These may vary by renderer:
 
 ---
 
-# 9. Moving the same file between VS Code, GitHub, and web editors
+# 10. Moving the same file between VS Code, GitHub, and web editors
 
 Because Markdown is plain text, the basic workflow is simple:
 
@@ -488,7 +527,7 @@ For maximum portability:
 
 ---
 
-# 10. Exporting Markdown to PDF
+# 11. Exporting Markdown to PDF
 
 Markdown itself is only source text. PDF export depends on the tool.
 
@@ -518,7 +557,7 @@ For beginners, PDF export is optional. Learn ordinary Markdown writing and previ
 
 ---
 
-# 11. Five-minute practice exercise
+# 12. Five-minute practice exercise
 
 Create a file named:
 
@@ -568,12 +607,12 @@ You now know enough Markdown to create useful research notes.
 
 ---
 
-# 12. Recommended next file in this repository
+# 13. Recommended next file in this repository
 
 After completing this guide, read:
 
 ```text
-04_Markdown_Handbooks/Markdown_Beginner_Handbook.md
+01_Markdown_Handbooks/Markdown_Beginner_Handbook.md
 ```
 
 Use its PDF version if you want to read the guide without editing the source.

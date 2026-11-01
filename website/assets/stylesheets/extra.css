@@ -22,3 +22,10 @@
 .practice .preview pre { background: var(--md-code-bg-color); padding: .6rem; overflow: auto; }
 .practice .preview blockquote { margin-left: 0; padding-left: 1rem; border-left: .2rem solid var(--md-default-fg-color--lighter); }
 @media (max-width: 60em) { .practice { grid-template-columns: 1fr; } }
+
+/* Collapsible syntax reminder and exercise solutions */
+details.cheat { margin: .5rem 0 1rem; }
+details.cheat > summary { cursor: pointer; font-weight: 600; }
+details > summary { cursor: pointer; }
+.md-typeset details.cheat table:not([class]) th,
+.md-typeset details.cheat table:not([class]) td { padding: .3em .9em; }

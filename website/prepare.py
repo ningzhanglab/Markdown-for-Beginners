@@ -17,14 +17,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(HERE, "_docs")
 
-H = "04_Markdown_Handbooks"
-C = "05_Markdown_Cheat_Sheets"
-T = "06_Markdown_Templates"
+H = "01_Markdown_Handbooks"
+C = "02_Markdown_Cheat_Sheets"
+T = "03_Markdown_Templates"
 S = "00_Start_Here"
 
 # source file (relative to repo root) -> page path inside the site
 PAGES = {
     f"{S}/Markdown_First_Note.md": "start-here/first-note.md",
+    f"{S}/Markdown_Practice_Exercises.md": "start-here/exercises.md",
+    f"{S}/Markdown_Troubleshooting.md": "start-here/troubleshooting.md",
+    f"{S}/Markdown_Glossary.md": "start-here/glossary.md",
     f"{C}/Markdown_Simple_Cheat_Sheet.md": "cheat-sheets/simple.md",
     f"{C}/Markdown_Advanced_Cheat_Sheet.md": "cheat-sheets/advanced.md",
     f"{H}/Markdown_Beginner_Handbook.md": "handbooks/beginner-handbook.md",
@@ -33,26 +36,32 @@ PAGES = {
 
 # files that other pages may mention by name -> (page path, link label)
 NAMED = {
+    "Markdown_Glossary": ("start-here/glossary.md", "Glossary"),
+    "Markdown_Troubleshooting": ("start-here/troubleshooting.md", "Why doesn't mine look right?"),
+    "Markdown_Practice_Exercises": ("start-here/exercises.md", "Practice Exercises"),
     "Markdown_Simple_Cheat_Sheet": ("cheat-sheets/simple.md", "Simple Cheat Sheet"),
     "Markdown_Advanced_Cheat_Sheet": ("cheat-sheets/advanced.md", "Advanced Cheat Sheet"),
     "Markdown_Beginner_Handbook": ("handbooks/beginner-handbook.md", "Beginner Handbook"),
     "Markdown_Setup_and_Editors_Guide": ("handbooks/setup-and-editors.md", "Setup and Editors Guide"),
 }
 
-PDFS = [
-    f"{C}/Markdown_Simple_Cheat_Sheet.pdf",
-    f"{C}/Markdown_Advanced_Cheat_Sheet.pdf",
-    f"{H}/Markdown_Beginner_Handbook.pdf",
-    f"{H}/Markdown_Setup_and_Editors_Guide.pdf",
-    f"{T}/Markdown_Template_01_Minimal_Note.pdf",
-    f"{T}/Markdown_Template_02_Research_Notes.pdf",
-    f"{T}/Markdown_Template_03_Project_README.pdf",
-]
+def discover_pdfs():
+    found = []
+    for folder in (S, H, C, T):
+        d = os.path.join(ROOT, folder)
+        for name in sorted(os.listdir(d)):
+            if name.endswith(".pdf"):
+                found.append(f"{folder}/{name}")
+    return found
+
 
 TEMPLATES = [
     ("Minimal note", "A very simple note.", f"{T}/Markdown_Template_01_Minimal_Note.md"),
     ("Research notes", "Daily research notes or a project log.", f"{T}/Markdown_Template_02_Research_Notes.md"),
     ("Project README", "Describe a project on GitHub.", f"{T}/Markdown_Template_03_Project_README.md"),
+    ("Class notes", "Notes for a class or lecture.", f"{T}/Markdown_Template_04_Class_Notes.md"),
+    ("Weekly plan", "A weekly plan with daily task lists.", f"{T}/Markdown_Template_05_Weekly_Plan.md"),
+    ("Meeting notes", "Decisions and action items from a meeting.", f"{T}/Markdown_Template_06_Meeting_Notes.md"),
 ]
 
 REPO_BLOB = "https://github.com/ningzhanglab/Markdown-for-Beginners/blob/main/"
@@ -71,13 +80,20 @@ def write(rel, text):
         f.write(text)
 
 
-def split_front_matter(text):
-    """Return (title or None, body). Pandoc build settings are not shown on the site."""
-    m = re.match(r"^---\n(.*?)\n---\n+", text, re.S)
-    if not m:
-        return None, text
-    t = re.search(r'^title:\s*"?(.*?)"?\s*$', m.group(1), re.M)
-    return (t.group(1) if t else None), text[m.end():]
+def page_title(src):
+    """PDF build settings live in build/<name>.yaml; the title there names the page."""
+    yml = os.path.join(ROOT, "build", os.path.basename(src)[:-3] + ".yaml")
+    if os.path.exists(yml):
+        with open(yml, encoding="utf-8") as f:
+            m = re.search(r'^title:\s*"?(.*?)"?\s*$', f.read(), re.M)
+        if m:
+            return m.group(1)
+    return None
+
+
+def open_details(text):
+    """GitHub shows <details> as-is; MkDocs needs markdown="1" to format what is inside."""
+    return outside_fences(text, lambda part: re.sub(r"<details>", '<details markdown="1">', part))
 
 
 def outside_fences(text, fn):
@@ -154,7 +170,8 @@ def main():
 
     # content pages copied from the repository folders
     for src, page in PAGES.items():
-        title, body = split_front_matter(read(src))
+        title, body = page_title(src), read(src)
+        body = open_details(body)
         body = link_named_files(body, page)
         body = add_after_first_heading(body, pdf_note(src, page))
         head = f'---\ntitle: "{title}"\n---\n\n' if title else ""
@@ -177,7 +194,7 @@ def main():
     write("templates.md", "\n".join(parts))
 
     # PDFs
-    for pdf in PDFS:
+    for pdf in discover_pdfs():
         dest = os.path.join(OUT, "downloads", os.path.basename(pdf))
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(os.path.join(ROOT, pdf), dest)
